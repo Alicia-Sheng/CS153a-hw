@@ -6,7 +6,7 @@ const Card = ({course}) => {
     <div className='card'>
       <img src={course.img.src} className='card-img-top' alt={course.img.alt} />
       <div className='card-body'>
-        <h2 className='card-title'>{`#${course.id} - ${course.code} (${course.semester})`}</h2>
+        <h3 className='card-title'>{`#${course.id} - ${course.code} (${course.semester})`}</h3>
       </div>
       <ul className='list-group list-group-flush'>
         <li className='list-group-item'>{`Class name: ${course.name}`}</li>
@@ -16,23 +16,25 @@ const Card = ({course}) => {
     </div>
   );
 };
-
-Card.propTypes = {
-  movie: PropTypes.object.isRequired
-}
 /*
 Card.propTypes = {
-  movie: PropTypes.shape({
-    title: PropTypes.string,
-    distributor: PropTypes.string,
-    year: PropTypes.number,
-    amount: PropTypes.string,
+  course: PropTypes.object.isRequired
+}
+*/
+
+Card.propTypes = {
+  course: PropTypes.shape({
+    name: PropTypes.string,
+    code: PropTypes.string,
+    instructor: PropTypes.string,
+    semester: PropTypes.number,
+    enrolled: PropTypes.number,
+    email: PropTypes.string,
     img: PropTypes.shape({
       src: PropTypes.string,
       alt: PropTypes.string,
     }),
-    ranking: PropTypes.number,
   }).isRequired,
 };
-*/
+
 export default Card;

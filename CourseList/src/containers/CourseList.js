@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const  CourseList = ({data,title}) => {
   return (
    <>
-     <h1> {title} </h1>
+     <h2> {title} </h2>
      <ul>
        {data.map(course => (
          <li key={course.id}>
